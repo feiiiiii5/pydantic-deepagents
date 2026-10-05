@@ -126,7 +126,9 @@ class TestCreateDeepAgent:
 
         marker = object()
 
-        def _sub_eviction(limit, binary, on_eviction):
+        def _sub_eviction(
+            limit: int | None, binary: int | None, on_eviction: Any
+        ) -> list[EvictionCapability]:
             factory = self._default_factory(
                 eviction_token_limit=limit,
                 max_binary_content=binary,
